@@ -1,4 +1,4 @@
-# KLED-chromeboomk-tips
+# KLED-chromebook-tips
 ACER spin 713 tips for ubuntu
 
 Some tips to get the chromebook working
@@ -30,17 +30,17 @@ sudo update-grub
 create a systemd service to disable LID0
 
 put a script in /opt/suspend/wakeup.sh
-----
+***
 #!/bin/bash
 
-## Disable devices
+##Disable devices
 echo 'LID0' | sudo tee /proc/acpi/wakeup
-
 exit 0
 EOF
----
+***
+
 create wakeup.service
----
+***
 [Unit]
 Description=Disable devices
 #After=network.target
@@ -52,7 +52,7 @@ ExecStart=/bin/bash /opt/suspend/wakeup.sh
 
 [Install]
 WantedBy=multi-user.target
----
+***
 
 follow guides to setup hibernate
 make swap file large enough for ram size
