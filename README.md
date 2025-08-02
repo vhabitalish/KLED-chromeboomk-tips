@@ -16,6 +16,17 @@ gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gn
 gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
 
  map anything else that is needed
+ add delete
+Edit /usr/share/X11/xkb/symbols/us, and right after the line:
+
+name[Group1]= "English (US)";
+
+add these lines:
+
+include "level3(ralt_switch)"
+key <BKSP> { [ BackSpace, BackSpace, Delete ] };
+
+
 
  3> suspend and hibernate
  out of box suspend doesn´t work keeps restarting
